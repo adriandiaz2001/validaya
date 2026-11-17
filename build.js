@@ -11,7 +11,7 @@ const path = require("path");
 
 const SITIO = {
   nombre: "ValidaYa",                 // cámbialo por tu marca
-  dominio: "https://www.ejemplo.es",  // cámbialo por tu dominio real (sin barra final)
+  dominio: "https://adriandiaz2001.github.io/validaya",  // cámbialo cuando tengas dominio propio (sin barra final)
   // Cuando AdSense te apruebe, pega aquí tu id (ca-pub-XXXXXXXXXXXXXXXX). Vacío = sin anuncios.
   adsenseCliente: "",
 
