@@ -12,6 +12,9 @@ const path = require("path");
 const SITIO = {
   nombre: "ValidaYa",                 // cámbialo por tu marca
   dominio: "https://adriandiaz2001.github.io/validaya",  // cámbialo cuando tengas dominio propio (sin barra final)
+  // Verificación de Google Search Console (valor "content" de la etiqueta meta).
+  googleVerificacion: "yjeCQCwLtQS9noOniXbXMMLj-XMVOPwtSoZI4ovUmWs",
+
   // Cuando AdSense te apruebe, pega aquí tu id (ca-pub-XXXXXXXXXXXXXXXX). Vacío = sin anuncios.
   adsenseCliente: "",
 
@@ -318,6 +321,7 @@ ${anuncio}
 <title>${esc(p.titulo)} | ${SITIO.nombre}</title>
 <meta name="description" content="${esc(p.descripcion)}">
 <link rel="canonical" href="${url}">
+${SITIO.googleVerificacion ? `<meta name="google-site-verification" content="${esc(SITIO.googleVerificacion)}">` : ""}
 <meta property="og:title" content="${esc(p.titulo)}">
 <meta property="og:description" content="${esc(p.descripcion)}">
 <meta property="og:url" content="${url}">
