@@ -15,6 +15,9 @@ const SITIO = {
   // Verificación de Google Search Console (valor "content" de la etiqueta meta).
   googleVerificacion: "yjeCQCwLtQS9noOniXbXMMLj-XMVOPwtSoZI4ovUmWs",
 
+  // Cloudflare Web Analytics (sin cookies). Vacío = sin analítica.
+  cloudflareToken: "3c291aab1e2b4852966b18a9dcee2b85",
+
   // Cuando AdSense te apruebe, pega aquí tu id (ca-pub-XXXXXXXXXXXXXXXX). Vacío = sin anuncios.
   adsenseCliente: "",
 
@@ -246,6 +249,7 @@ const PAGINAS = [
     soloContenido: true,
     contenido: `
 <p>Las herramientas de este sitio funcionan íntegramente en tu navegador. Los valores que escribes no se envían, no se guardan y no se registran en ningún servidor.</p>
+<p>Para saber cuántas visitas recibe cada herramienta usamos Cloudflare Web Analytics, que no usa cookies ni identifica a los visitantes: solo registra datos agregados, como la página visitada, el país o el tipo de dispositivo. Nunca recoge lo que escribes en las herramientas.</p>
 <p>Algunas recomendaciones, marcadas como «Publicidad», son enlaces de afiliado: si contratas el servicio a través de ellos, podemos recibir una comisión sin que te cueste nada más. Este sitio también puede mostrar anuncios de Google AdSense. Google y sus socios pueden usar cookies para mostrar anuncios basados en tus visitas a este y otros sitios. Antes de instalar ninguna cookie no necesaria te pediremos tu consentimiento, y puedes gestionar la publicidad personalizada en la <a href="https://adssettings.google.com" rel="nofollow">configuración de anuncios de Google</a>.</p>
 <p>Responsable: [tu nombre o razón social] · Contacto: [tu correo de contacto].</p>`,
   },
@@ -349,6 +353,7 @@ ${adsHead}
   Comprobar la estructura de un documento no garantiza que exista ni identifica a su titular.
 </div></footer>
 ${p.soloContenido ? "" : `<script src="assets/validadores.js"></script>\n<script src="assets/app.js"></script>`}
+${SITIO.cloudflareToken ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${esc(SITIO.cloudflareToken)}"}'></script>` : ""}
 </body>
 </html>
 `;
